@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int fibbonacciGen(int termNo) {
+int fib(int termNo) {
 	if ( termNo <= 1 ) {
 		return 0;
 	}
@@ -8,16 +8,16 @@ int fibbonacciGen(int termNo) {
 		return 1;
 	}
 	else {
-		return fibbonacciGen ( termNo - 1 ) + fibbonacciGen ( termNo - 2 );
+		return fib ( termNo - 1 ) + fib ( termNo - 2 );
 	}
 }
 
 void main() {
-	int numberOfTerms,controlVar;
+	int n,i;
 	printf ( "Enter the number: " );
-	scanf ( "%d" , &numberOfTerms );
-	for( controlVar = 1; controlVar <= numberOfTerms; controlVar++ ) {
-		printf ( "%d\t" , fibbonacciGen ( controlVar ) );
+	scanf ( "%d" , &n );
+	for( i = 1; i <= n; i++ ) {
+		printf ( "%d\t" , fib ( i ) );
 	}
 	printf ( "\n" );
 }

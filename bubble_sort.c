@@ -1,32 +1,32 @@
 #include<stdio.h>
 
 void main() {
-	int arraySize, controlVar, controlVarI, controlVarJ, temp;
-	printf ( "Enter the size of the array: " );
-	scanf ( "%d", &arraySize );
-	int array[arraySize];
-	printf ( "Enter the array elements: ");
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		scanf ( "%d", &array[controlVar] );
+	int n, i, j, k, tmp;
+	printf ( "Enter the size of the arr: " );
+	scanf ( "%d", &n );
+	int arr[n];
+	printf ( "Enter the arr elements: ");
+	for ( i = 0; i < n; i ++ ) {
+		scanf ( "%d", &arr[i] );
 	}
-	printf ( "\nUnsorted array: \n" );
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		printf ( "%d\t", array[controlVar]);
+	printf ( "\nUnsorted arr: \n" );
+	for ( i = 0; i < n; i ++ ) {
+		printf ( "%d\t", arr[i]);
 	}
 
-	for ( controlVarI = arraySize-1; controlVarI > 0; controlVarI -- ) {
-		for ( controlVarJ = 0; controlVarJ < controlVarI; controlVarJ ++ ) {
-			if ( array[controlVarJ] > array[controlVarJ + 1] ) {
-				temp = array[controlVarJ];
-				array[controlVarJ] = array[controlVarJ + 1];
-				array[controlVarJ + 1] = temp;
+	for ( j = n-1; j > 0; j -- ) {
+		for ( k = 0; k < j; k ++ ) {
+			if ( arr[k] > arr[k + 1] ) {
+				tmp = arr[k];
+				arr[k] = arr[k + 1];
+				arr[k + 1] = tmp;
 			}
 		}
 	}
 
-	printf ( "\nSorted array: \n" );
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		printf ( "%d\t", array[controlVar]);
+	printf ( "\nSorted arr: \n" );
+	for ( i = 0; i < n; i ++ ) {
+		printf ( "%d\t", arr[i]);
 	}
 	printf ( "\n" );
 }

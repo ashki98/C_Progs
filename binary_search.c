@@ -1,35 +1,35 @@
 #include<stdio.h>
 
 void main() {
-	int arraySize, searchElement, controlVar, controlBegin, controlMiddle, controlEnd, flag = 0;
-	printf("Enter the size of the array: ");
-	scanf("%d",&arraySize);
-	int array[arraySize];
-	printf("Enter the array elements(should be sorted in ascending order): \n");
-	for(controlVar = 0; controlVar < arraySize; controlVar++) {
-		scanf("%d",&array[controlVar]);
+	int n, key, i, first, mid, last, fl = 0;
+	printf("Enter the size of the arr: ");
+	scanf("%d",&n);
+	int arr[n];
+	printf("Enter the arr elements(should be sorted in ascending order): \n");
+	for(i = 0; i < n; i++) {
+		scanf("%d",&arr[i]);
 	}
 	printf("Enter the element to be searched: ");
-	scanf("%d",&searchElement);
+	scanf("%d",&key);
 
-	controlBegin = 0;
-	controlEnd = arraySize - 1;
+	first = 0;
+	last = n - 1;
 
-	while( (controlEnd >= controlBegin) ) {
-		controlMiddle = ( controlBegin + controlEnd ) / 2;
-		if(searchElement == array[controlMiddle]) {
-			printf("Element(%d)found at position %d\n",searchElement,controlMiddle);
-			flag = 1;
+	while( (last >= first) ) {
+		mid = ( first + last ) / 2;
+		if(key == arr[mid]) {
+			printf("Element(%d)found at position %d\n",key,mid);
+			fl = 1;
 			break;
 		}
-		else if(searchElement < array[controlMiddle]) {
-			controlEnd = controlMiddle - 1;
+		else if(key < arr[mid]) {
+			last = mid - 1;
 		}
-		else if(searchElement > array[controlMiddle]) {
-			controlBegin = controlMiddle + 1;
+		else if(key > arr[mid]) {
+			first = mid + 1;
 		}
 	}
-	if(flag = 0) {
-		printf("Element(%d) was not found\n",searchElement);
+	if(fl = 0) {
+		printf("Element(%d) was not found\n",key);
 	}
 }

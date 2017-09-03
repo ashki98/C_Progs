@@ -1,19 +1,19 @@
 #include<stdio.h>
 
 void main() {
-	int arraySize,controlVar,searchElement,flag=0;
+	int n,i,key,flag=0;
 	printf("Enter the size of the array: ");
-	scanf("%d",&arraySize);
-	int array[arraySize];
+	scanf("%d",&n);
+	int arr[n];
 	printf("Enter the elements in the array: \n");
-	for(controlVar=0;controlVar<arraySize;controlVar++) {
-		scanf("%d",&array[controlVar]);
+	for(i=0;i<n;i++) {
+		scanf("%d",&arr[i]);
 	}
 	printf("Enter the element to be searched: ");
-	scanf("%d",&searchElement);
-	for(controlVar=0;controlVar<arraySize;controlVar++) {
-		if(array[controlVar] == searchElement) {
-			printf("Element(%d) found at position %d\n",searchElement,controlVar);
+	scanf("%d",&key);
+	for(i=0;i<n;i++) {
+		if(arr[i] == key) {
+			printf("Element(%d) found at position %d\n",key,i);
 			flag = 1;
 		}
 	}

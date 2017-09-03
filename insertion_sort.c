@@ -1,32 +1,32 @@
 #include<stdio.h>
 
 void main() {
-	int arraySize, controlVar, controlVarI, controlVarJ, temp;
-	printf ( "Enter the size of the array: " );
-	scanf ( "%d", &arraySize );
-	int array[arraySize];
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		scanf ( "%d", &array[controlVar] );
+	int n, i, j, k, temp;
+	printf ( "Enter the size of the arr: " );
+	scanf ( "%d", &n );
+	int arr[n];
+	for ( i = 0; i < n; i ++ ) {
+		scanf ( "%d", &arr[i] );
 	}
 
-	printf ( "Unsorted array: \n" );
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		printf ( "%d\t", array[controlVar] );
+	printf ( "Unsorted arr: \n" );
+	for ( i = 0; i < n; i ++ ) {
+		printf ( "%d\t", arr[i] );
 	}
 
-	for ( controlVarI = 1; controlVarI < arraySize; controlVarI ++ ) {
-		for ( controlVarJ = controlVarI; controlVarJ > 0; controlVarJ -- ) {
-			if ( array[controlVarJ - 1] > array[controlVarJ] ) {
-				temp = array[controlVarJ - 1];
-				array[controlVarJ - 1] = array[controlVarJ];
-				array[controlVarJ] = temp;
+	for ( j = 1; j < n; j ++ ) {
+		for ( k = j; k > 0; k -- ) {
+			if ( arr[k - 1] > arr[k] ) {
+				temp = arr[k - 1];
+				arr[k - 1] = arr[k];
+				arr[k] = temp;
 			}
 		}
 	}
 
-	printf ( "\nSorted array: \n" );
-	for ( controlVar = 0; controlVar < arraySize; controlVar ++ ) {
-		printf ( "%d\t", array[controlVar] );
+	printf ( "\nSorted arr: \n" );
+	for ( i = 0; i < n; i ++ ) {
+		printf ( "%d\t", arr[i] );
 	}
 	printf ( "\n" );
 }
